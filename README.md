@@ -38,3 +38,7 @@ H2 или Postgresql
 ---------------
 
 Описание
+
+есть 2 rest:
+    POST   /mainMethods/acceptMessage (принимает json с обязательным полем message)
+    GET    /mainMethods/tasksForCall (возвращает список заданий для прозвона клиентов)
