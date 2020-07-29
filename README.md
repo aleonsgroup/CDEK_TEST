@@ -40,5 +40,9 @@ H2 или Postgresql
 Описание
 
 есть 2 rest:
-    POST   /mainMethods/acceptMessage (принимает json с обязательным полем message)
-    GET    /mainMethods/tasksForCall (возвращает список заданий для прозвона клиентов)
+    POST   /mainMethods/acceptMessage (принимает json с обязательным полем message: String)
+    GET    /mainMethods/tasksForCall (возвращает список заданий для прозвона клиентов) 
+            для возврата нужно указать параметры:
+                fromDate: Date (yyyy-MM-dd) обязательно
+                toDate: Date (yyyy-MM-dd) обязательно
+                taskNumber: Long Необязательно

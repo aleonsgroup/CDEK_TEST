@@ -1,10 +1,10 @@
 package rest;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -22,7 +22,10 @@ public class MainMethods {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/tasksForCall")
-    public ResponseEntity getTasksForCall(){
+    public ResponseEntity getTasksForCall(
+            @RequestParam(value="fromDate", required=true) @DateTimeFormat(pattern="yyyy-MM-dd") Date fromDate,
+            @RequestParam(value="toDate", required=true) @DateTimeFormat(pattern="yyyy-MM-dd") Date toDate,
+            @RequestParam(value="numberTask", required=false) Long numberTask){
         return ResponseEntity.ok("tasks");
     }
 
