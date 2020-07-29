@@ -1,17 +1,15 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Table(name = "TASK")
 @Entity
 public class Task {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "NUMBER")
-    private Long numberTask;
+    private Integer numberTask;
     @Column(name = "DATE")
     private Date date;
     @Column(name = "TIME")
@@ -19,12 +17,17 @@ public class Task {
     @Column(name = "IS_COMPLETED")
     private Boolean isCompleted;
 
-    public Long getNumberTask() {
-        return numberTask;
+    public Task() {
     }
 
-    public void setNumberTask(Long numberTask) {
-        this.numberTask = numberTask;
+    public Task(Date date, String time, Boolean isCompleted) {
+        this.date = date;
+        this.time = time;
+        this.isCompleted = isCompleted;
+    }
+
+    public Integer getNumberTask() {
+        return numberTask;
     }
 
     public Date getDate() {

@@ -3,7 +3,6 @@ package dao;
 import model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import java.util.Date;
@@ -51,7 +50,7 @@ public class TaskDAOImpl implements TaskDAO{
     }
 
     @Override
-    public List<Task> get(Date fromDate, Date toDate, Long number) {
+    public List<Task> get(Date fromDate, Date toDate, Integer number) {
         return
                 em.createQuery("SELECT task FROM Task task where task.date >= :fromDate AND task.date<=:toDate AND task.numberTask = :number", Task.class)
                         .setParameter("fromDate", fromDate)
