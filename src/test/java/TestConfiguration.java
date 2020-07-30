@@ -7,7 +7,7 @@ public class TestConfiguration {
 
         @Bean
         public TaskDAO getTaskDAO() {
-            return new TaskDAOImpl(Persistence.createEntityManagerFactory("PersistenceH2").createEntityManager());
+            return new TaskDAOImpl(Persistence.createEntityManagerFactory("PersistenceH2Test").createEntityManager());
         }
 
 }

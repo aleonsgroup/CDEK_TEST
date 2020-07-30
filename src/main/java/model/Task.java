@@ -11,6 +11,7 @@ public class Task {
     @Column(name = "NUMBER")
     private Integer numberTask;
     @Column(name = "DATE")
+    @Temporal(TemporalType.DATE)
     private Date date;
     @Column(name = "TIME")
     private String time;
